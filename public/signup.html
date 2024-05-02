@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <!-- Assuming your CSS is correctly linked -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="wheelchairs.html">Wheel Chairs</a></li>
+            <li><a href="computers.html">Computers</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="signup-container">
+        <div class="signup-form">
+            <form action="/submit-your-form-handler" method="POST">
+                <div class="form-field">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                </div>
+                <div class="form-field">
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="form-field">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-field">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
