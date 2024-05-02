@@ -1,0 +1,113 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+    /* Added padding to avoid overlap with the fixed navbar */
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* Ensures the navbar covers full width */
+    position: fixed;
+    /* Keeps the navbar at the top */
+    top: 0;
+    /* Aligns the navbar to the top */
+    left: 0;
+    /* Aligns the navbar to the left */
+    z-index: 1000;
+    /* Ensures navbar is above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Optional: Adds depth with a shadow */
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+    /* Maintains white color on hover, consider changing if needed */
+}
+
+.signup-container {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid white;
+    margin: auto;
+    /* Centers the signup form in the viewport */
+}
+
+.signup-container::before,
+.signup-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signup-container::before {
+    left: -170px;
+    background-image: url('public/images/image.jpeg');
+}
+
+.signup-container::after {
+    right: -170px;
+    background-image: url('public/images/image.jpeg');
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eee;
+}

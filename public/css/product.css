@@ -1,0 +1,120 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+    /* Added padding to avoid overlap with the fixed navbar */
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* Ensures the navbar covers full width */
+    position: fixed;
+    /* Keeps the navbar at the top */
+    top: 0;
+    /* Aligns the navbar to the top */
+    left: 0;
+    /* Aligns the navbar to the left */
+    z-index: 1000;
+    /* Ensures navbar is above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Optional: Adds depth with a shadow */
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+    /* Maintains white color on hover, consider changing if needed */
+}
+
+.navbar,
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    /* Adjust based on your design */
+    align-items: center;
+    /* Centers items vertically */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Creates three columns */
+    grid-gap: 10px;
+    /* Space between cells */
+    padding: 20px;
+    max-width: 960px;
+    /* Adjust based on your preference */
+    margin: auto;
+    /* Center the grid */
+}
+
+.product-cell {
+    height: 200px;
+    /* Set a fixed height for each cell */
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    /* Optional: adds a border around each cell */
+}
+
+#product1 {
+    background-image: url('path/to/image1.jpg');
+}
+
+#product2 {
+    background-image: url('path/to/image2.jpg');
+}
+
+#product3 {
+    background-image: url('path/to/image3.jpg');
+}
+
+#product4 {
+    background-image: url('path/to/image3.jpg');
+}
+
+#product5 {
+    background-image: url('path/to/image3.jpg');
+}
+
+
+/* Continue assigning background images for each cell */
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns on smaller screens */
+    }
+    .product-cell {
+        height: 150px;
+        /* Smaller cells on smaller screens */
+    }
+}
