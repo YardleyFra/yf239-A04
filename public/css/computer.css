@@ -1,120 +1,99 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Resetting some basic elements to improve consistency */
+
+body,
+html {
+    height: 100%;
     margin: 0;
-    padding-top: 50px;
-    /* Added padding to avoid overlap with the fixed navbar */
+    padding: 0;
+    background-color: black;
 }
 
+
+/* Navigation bar styling */
+
 .navbar {
+    width: 100%;
     background-color: #333;
     padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    /* Ensures the navbar covers full width */
     position: fixed;
-    /* Keeps the navbar at the top */
     top: 0;
-    /* Aligns the navbar to the top */
-    left: 0;
-    /* Aligns the navbar to the left */
     z-index: 1000;
-    /* Ensures navbar is above other content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    /* Optional: Adds depth with a shadow */
 }
 
 .nav-links {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
-    padding: 10px;
+    margin: 0 10px;
 }
 
 .nav-links a {
+    color: white;
     text-decoration: none;
-    color: white;
     font-size: 16px;
-    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: white;
-    /* Maintains white color on hover, consider changing if needed */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.navbar,
-.product-grid {
-    display: flex;
-    justify-content: space-around;
-    /* Adjust based on your design */
-    align-items: center;
-    /* Centers items vertically */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
+
+
+/* Product grid styling */
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Creates three columns */
-    grid-gap: 10px;
-    /* Space between cells */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
     padding: 20px;
-    max-width: 960px;
-    /* Adjust based on your preference */
-    margin: auto;
-    /* Center the grid */
+    margin-top: 60px;
+    /* Adjust top margin to match the height of the navbar */
 }
 
 .product-cell {
-    height: 200px;
-    /* Set a fixed height for each cell */
     background-size: cover;
     background-position: center;
-    border: 1px solid #ccc;
-    /* Optional: adds a border around each cell */
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-#product1 {
-    background-image: url('path/to/image1.jpg');
+.product-details {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
 }
 
-#product2 {
-    background-image: url('path/to/image2.jpg');
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
-#product3 {
-    background-image: url('path/to/image3.jpg');
-}
-
-#product4 {
-    background-image: url('path/to/image3.jpg');
-}
-
-#product5 {
-    background-image: url('path/to/image3.jpg');
-}
-
-
-/* Continue assigning background images for each cell */
-
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Two columns on smaller screens */
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
     }
-    .product-cell {
-        height: 150px;
-        /* Smaller cells on smaller screens */
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 }

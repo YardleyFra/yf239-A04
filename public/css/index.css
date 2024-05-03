@@ -3,10 +3,9 @@ html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
-
-
-/* Style for the navbar container */
 
 
 /* Style for the navbar container */
@@ -68,13 +67,79 @@ html {
     /* White text color on hover */
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Dropdown items */
+
+.dropdown-content li {
+    float: none;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Style for the hero section with background image */
+
 .hero {
     background-color: #f4f4f4;
     padding: 50px 20px;
     text-align: center;
-    background-image: url('images/image.png');
-    /* Update with the correct path */
-    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Ensures the pseudo-element doesn't extend outside the hero area */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    /* Move it more to the left */
+    top: -225px;
+    /* Move it up a little more */
+    width: 300px;
+    /* Make it a bit bigger */
+    height: 100%;
+    background-image: url('/images/image.jpeg');
+    background-size: contain;
+    /* Make the image smaller */
+    background-position: right;
+    /* Adjust the positioning if necessary */
+    background-repeat: no-repeat;
+}
+
+
+/* Applying the animation to the hero class */
+
+.hero {
+    animation: slideInFromRight 0.5s ease-out forwards;
+    /* Animation timing and fill mode */
 }
 
 .container {
@@ -116,6 +181,14 @@ html {
 
 .btn-secondary {
     background-color: white;
+}
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    /* Adjust padding as needed */
 }
 
 @media (min-width: 768px) {

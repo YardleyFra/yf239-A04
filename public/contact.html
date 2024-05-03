@@ -6,20 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page - Yardley Francois</title>
     <link rel="stylesheet" href="css/contact.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rotate-image:hover {
+            transform: rotate(360deg);
+            transition: transform 2s;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="navbar">
-        <!-- Navigation links -->
+    <nav class="navbar">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="wheelchairs.html">Wheel Chairs</a></li>
             <li><a href="computer.html">Computers</a></li>
             <li><a href="properties.html">Properties</a></li>
             <li><a href="signup.html">Sign Up</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="dropdown">
+                <a href="contact.html">Contact</a>
+                <ul class="dropdown-content">
+                    <li><a href="contact.html#email">Email</a></li>
+                    <li><a href="contact.html#phone">Phone</a></li>
+                    <li><a href="contact.html#address">Address</a></li>
+                </ul>
+            </li>
         </ul>
-    </div>
+    </nav>
+
     <div class="contact-container">
         <div class="contact-info">
             <h1>Yardley Francois</h1>
@@ -29,9 +44,13 @@
             <p>Email: Yf239@njit.com</p>
         </div>
         <div class="contact-image">
-            <img src="images/IMG_4990.JPEG" alt="Yardley Francois">
+            <!-- Added rotate-image class for rotation effect -->
+            <img src="images/IMG_4990.JPEG" alt="Yardley Francois" class="rotate-image">
         </div>
     </div>
+    <footer class="footer">
+        <p>&copy; 2024 Yardley Francois. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
